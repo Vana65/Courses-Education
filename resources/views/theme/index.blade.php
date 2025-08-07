@@ -13,8 +13,12 @@
                                     <h1 data-animation="fadeInLeft" data-delay="0.2s">Online learning<br> platform</h1>
                                     <p data-animation="fadeInLeft" data-delay="0.4s">Build skills with courses,
                                         certificates, and degrees online from world-class universities and companies</p>
-                                    <a href="#" class="btn hero-btn" data-animation="fadeInLeft"
-                                        data-delay="0.7s">Join for Free</a>
+
+                                    @guest
+                                        <a href="{{ route('register') }}" class="btn hero-btn" data-animation="fadeInLeft"
+                                            data-delay="0.7s">Join for Free</a>
+                                    @endguest
+
                                 </div>
                             </div>
                         </div>
@@ -64,7 +68,7 @@
                                         <span>$135</span>
                                     </div>
                                 </div>
-                                <a href="#" class="border-btn border-btn2">Find out more</a>
+                                <a href="{{ route('theme.courses') }}" class="border-btn border-btn2">Find out more</a>
                             </div>
 
                         </div>
@@ -97,7 +101,7 @@
                                         <span>$135</span>
                                     </div>
                                 </div>
-                                <a href="#" class="border-btn border-btn2">Find out more</a>
+                                <a href="{{ route('theme.courses') }}" class="border-btn border-btn2">Find out more</a>
                             </div>
                         </div>
                     </div>
@@ -130,7 +134,7 @@
                                         <span>$135</span>
                                     </div>
                                 </div>
-                                <a href="#" class="border-btn border-btn2">Find out more</a>
+                                <a href="{{ route('theme.courses') }}" class="border-btn border-btn2">Find out more</a>
                             </div>
 
                         </div>
@@ -197,7 +201,7 @@
                                 with us.</h2>
                             <p>The automated process all your website tasks. Discover tools and techniques to engage
                                 effectively with vulnerable children and young people.</p>
-                            <a href="#" class="btn">Join now for Free</a>
+                            <a href="{{ route('register') }}" class="btn">Join now for Free</a>
                         </div>
                     </div>
                 </div>

@@ -21,15 +21,13 @@ Route::controller(ThemeController::class)->name('theme.')->group(function () {
         Route::get('/contact', 'contact')->name('contact');
         Route::get('/blog', 'blog')->name('blog');
         Route::get('/blog_details', 'blog_details')->name('blog_details');
-    Route::get('/login', 'login')->name('login');
-    Route::get('/register', 'register')->name('register');
 
 
 });
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return to_route('theme.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

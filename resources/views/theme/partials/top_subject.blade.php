@@ -15,7 +15,7 @@
                          <img src="assets/img/gallery/topic1.png" alt="">
                          <div class="topic-content-box">
                              <div class="topic-content">
-                                 <h3><a href="#">Programing</a></h3>
+                                 <h3><a href="{{ route('theme.blog') }}">Programing</a></h3>
                              </div>
                          </div>
                      </div>
@@ -27,7 +27,7 @@
                          <img src="assets/img/gallery/topic2.png" alt="">
                          <div class="topic-content-box">
                              <div class="topic-content">
-                                 <h3><a href="#">Programing</a></h3>
+                                 <h3><a href="{{ route('theme.blog') }}">Programing</a></h3>
                              </div>
                          </div>
                      </div>
@@ -39,7 +39,7 @@
                          <img src="assets/img/gallery/topic3.png" alt="">
                          <div class="topic-content-box">
                              <div class="topic-content">
-                                 <h3><a href="#">Programing</a></h3>
+                                 <h3><a href="{{ route('theme.blog') }}">Programing</a></h3>
                              </div>
                          </div>
                      </div>
@@ -51,7 +51,7 @@
                          <img src="assets/img/gallery/topic4.png" alt="">
                          <div class="topic-content-box">
                              <div class="topic-content">
-                                 <h3><a href="#">Programing</a></h3>
+                                 <h3><a href="{{ route('theme.blog') }}">Programing</a></h3>
                              </div>
                          </div>
                      </div>
@@ -63,7 +63,7 @@
                          <img src="assets/img/gallery/topic5.png" alt="">
                          <div class="topic-content-box">
                              <div class="topic-content">
-                                 <h3><a href="#">Programing</a></h3>
+                                 <h3><a href="{{ route('theme.blog') }}">Programing</a></h3>
                              </div>
                          </div>
                      </div>
@@ -75,7 +75,7 @@
                          <img src="assets/img/gallery/topic6.png" alt="">
                          <div class="topic-content-box">
                              <div class="topic-content">
-                                 <h3><a href="#">Programing</a></h3>
+                                 <h3><a href="{{ route('theme.blog') }}">Programing</a></h3>
                              </div>
                          </div>
                      </div>
@@ -87,7 +87,7 @@
                          <img src="assets/img/gallery/topic7.png" alt="">
                          <div class="topic-content-box">
                              <div class="topic-content">
-                                 <h3><a href="#">Programing</a></h3>
+                                 <h3><a href="{{ route('theme.blog') }}">Programing</a></h3>
                              </div>
                          </div>
                      </div>
@@ -99,7 +99,7 @@
                          <img src="assets/img/gallery/topic8.png" alt="">
                          <div class="topic-content-box">
                              <div class="topic-content">
-                                 <h3><a href="#">Programing</a></h3>
+                                 <h3><a href="{{ route('theme.blog') }}">Programing</a></h3>
                              </div>
                          </div>
                      </div>
@@ -109,7 +109,7 @@
          <div class="row justify-content-center">
              <div class="col-xl-12">
                  <div class="section-tittle text-center mt-20">
-                     <a href="courses.html" class="border-btn">View More Subjects</a>
+                     <a href="{{ route('theme.courses') }}" class="border-btn">View More Subjects</a>
                  </div>
              </div>
          </div>
