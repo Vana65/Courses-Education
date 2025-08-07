@@ -104,11 +104,20 @@
                             <!------ Newsletter start ----->
                             <aside class="single_sidebar_widget newsletter_widget">
                                 <h4 class="widget_title" style="color: #2d2d2d;">Newsletter</h4>
-                                <form action="#">
+                                @if (session('status'))
+                                    <div class="alert alert-success">
+                                        {{ session('status') }}
+                                    </div>
+                                @endif
+                                <form action="{{ route('subscriber.store') }}" method="post">
+                                    @csrf
                                     <div class="form-group">
-                                        <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                                            onblur="this.placeholder = 'Enter email'" placeholder='Enter email'
-                                            required>
+                                        <input type="email" name="email" class="form-control"
+                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'"
+                                            placeholder='Enter email' required>
+                                        @error('email')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
                                         type="submit">Subscribe</button>
