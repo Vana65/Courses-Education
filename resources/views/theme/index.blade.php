@@ -54,21 +54,10 @@
 
                                 </p>
                                 <div class="properties__footer d-flex justify-content-between align-items-center">
-                                    <div class="restaurant-name">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half"></i>
-                                        </div>
-                                        <p><span>(4.5)</span> based on 120</p>
-                                    </div>
                                     <div class="price">
                                         <span>$135</span>
                                     </div>
                                 </div>
-                                <a href="{{ route('theme.courses') }}" class="border-btn border-btn2">Find out more</a>
                             </div>
 
                         </div>
@@ -87,21 +76,10 @@
                                     effectively with vulnerable children and young people.
                                 </p>
                                 <div class="properties__footer d-flex justify-content-between align-items-center">
-                                    <div class="restaurant-name">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half"></i>
-                                        </div>
-                                        <p><span>(4.5)</span> based on 120</p>
-                                    </div>
                                     <div class="price">
                                         <span>$135</span>
                                     </div>
                                 </div>
-                                <a href="{{ route('theme.courses') }}" class="border-btn border-btn2">Find out more</a>
                             </div>
                         </div>
                     </div>
@@ -120,21 +98,10 @@
 
                                 </p>
                                 <div class="properties__footer d-flex justify-content-between align-items-center">
-                                    <div class="restaurant-name">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half"></i>
-                                        </div>
-                                        <p><span>(4.5)</span> based on 120</p>
-                                    </div>
                                     <div class="price">
                                         <span>$135</span>
                                     </div>
                                 </div>
-                                <a href="{{ route('theme.courses') }}" class="border-btn border-btn2">Find out more</a>
                             </div>
 
                         </div>
@@ -154,23 +121,11 @@
 
                                 </p>
                                 <div class="properties__footer d-flex justify-content-between align-items-center">
-                                    <div class="restaurant-name">
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half"></i>
-                                        </div>
-                                        <p><span>(4.5)</span> based on 120</p>
-                                    </div>
                                     <div class="price">
                                         <span>$135</span>
                                     </div>
                                 </div>
-                                <a href="#" class="border-btn border-btn2">Find out more</a>
                             </div>
-
                         </div>
                     </div>
                     <!-- Single -->
