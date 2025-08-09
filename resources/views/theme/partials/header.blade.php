@@ -31,7 +31,8 @@
                                                                         <li><a href="{{ route('theme.blog_details') }}">Blog
                                                                                 Details</a>
                                                                         </li>
-                                                                        <li><a href="#">Add New Bloge</a></li>
+                                                                        <li><a href="{{ route('blogs.create') }}">Add
+                                                                                New Bloge</a></li>
                                                                         <li><a href="#">Add New Course</a></li>
                                                                     </ul>
                                                                 </li>

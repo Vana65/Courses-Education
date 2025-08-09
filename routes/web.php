@@ -5,6 +5,7 @@ use App\Http\Controllers\ThemeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\BlogController;
 
 
 /*
@@ -24,9 +25,11 @@ Route::controller(ThemeController::class)->name('theme.')->group(function () {
         Route::get('/contact', 'contact')->name('contact');
         Route::get('/blog', 'blog')->name('blog');
         Route::get('/blog_details', 'blog_details')->name('blog_details');
-
-
 });
+
+Route::resource('blogs', BlogController::class);
+
+
 
 Route::post('/subscriber/store', [SubscriberController::class, 'store'])->name('subscriber.store');
 Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');

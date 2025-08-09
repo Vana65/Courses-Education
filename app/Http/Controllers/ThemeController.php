@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 class ThemeController extends Controller
 {
+
     public function index()
     {
         return view('theme.index');
@@ -23,10 +24,22 @@ class ThemeController extends Controller
     }
     public function blog()
     {
-        return view('theme.blog');
+        if (auth()->check()) {
+            return view('theme.blog');
+        }
+        else {
+            return view('Auth.login');
+        }
     }
     public function blog_details()
     {
-        return view('theme.blog_details');
+        if (auth()->check()) {
+
+            return view(view: 'theme.blog_details');
+
+        }
+        else {
+            return view('Auth.login');
+        }
     }
 }
