@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
+use App\Http\Requests\StoreBlogRequest;
 
 class BlogController extends Controller
 {
@@ -34,9 +36,16 @@ class BlogController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreBlogRequest $request)
     {
-        //
+        $data=  $request->validated();
+        $image = $request->image;
+        $newImageName = time() . '-' . $image->getClientOriginalName();
+        $path = $request->file('image')->storeAs('blogs', $newImageName, 'public');
+        $data['image'] = $newImageName;
+        $data['user_id'] = Auth::user()->id;
+        Blog::create($data);
+        return back()->with("blogCreateStatus", "Blog Added Successfully");
     }
 
     /**

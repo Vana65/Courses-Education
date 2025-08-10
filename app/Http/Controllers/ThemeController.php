@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+
 
 class ThemeController extends Controller
 {
@@ -22,15 +24,18 @@ class ThemeController extends Controller
     {
         return view('theme.contact');
     }
-    public function blog()
-    {
-        if (auth()->check()) {
-            return view('theme.blog');
-        }
-        else {
-            return view('Auth.login');
-        }
+   public function blog()
+{
+    $blogs = Blog::paginate(2);
+
+    if (auth()->check()) {
+        return view('theme.blog', compact('blogs'));
+
+    } else {
+        return view('Auth.login');
     }
+}
+
     public function blog_details()
     {
         if (auth()->check()) {
