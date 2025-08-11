@@ -74,4 +74,10 @@ class BlogController extends Controller
     {
         //
     }
+     public function myBlogs()
+
+    {
+        $blogs = Blog::where('user_id', Auth::user()->id)->paginate(10);
+        return view('theme.blogs.my_blogs', compact('blogs'));
+    }
 }

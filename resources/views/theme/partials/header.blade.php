@@ -54,7 +54,7 @@
                                                                         style="min-width: 150px;">
                                                                         <li class="mb-1">
                                                                             <a class="btn header-btn w-100"
-                                                                                href="#">
+                                                                                href="{{ route('blogs.my-blogs') }}">
                                                                                 My Blogs
                                                                             </a>
                                                                         </li>

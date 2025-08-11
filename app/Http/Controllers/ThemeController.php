@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use Illuminate\Support\Facades\Auth;
 
 
 class ThemeController extends Controller
@@ -32,8 +33,13 @@ class ThemeController extends Controller
 
     public function blogsByCategory($id)
     {
-        $blogs = Blog::where('category_id', $id)->paginate(2);
-        return view('theme.blog', compact('blogs'));
+        if (Auth::check()) {
+            $blogs = Blog::where('category_id', $id)->paginate(2);
+            return view('theme.blog', compact('blogs'));
+        }
+       else{
+           abort(403);
+       }
     }
 
     public function blog_details($id)

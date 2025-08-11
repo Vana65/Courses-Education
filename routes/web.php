@@ -30,6 +30,7 @@ Route::controller(ThemeController::class)->name('theme.')->group(function () {
     });
 });
 
+Route::get('/my-blogs',[BlogController::class,'myBlogs'])->name('blogs.my-blogs')->middleware('auth');
 
 Route::middleware('auth')->resource('blogs', BlogController::class);
 
