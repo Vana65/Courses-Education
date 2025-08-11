@@ -23,11 +23,15 @@ Route::controller(ThemeController::class)->name('theme.')->group(function () {
         Route::get('/courses', 'courses')->name('courses');
         Route::get('/about', 'about')->name('about');
         Route::get('/contact', 'contact')->name('contact');
+    Route::middleware('auth')->group(function () {
         Route::get('/blog', 'blog')->name('blog');
-        Route::get('/blog_details', 'blog_details')->name('blog_details');
+        Route::get('/blog/{id}', 'blogsByCategory')->name('blogsByCategory');
+        Route::get('/blog_details/{id}', 'blog_details')->name('blog_details');
+    });
 });
 
-Route::resource('blogs', BlogController::class);
+
+Route::middleware('auth')->resource('blogs', BlogController::class);
 
 
 
@@ -41,9 +45,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__.'/auth.php';

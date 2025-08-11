@@ -25,26 +25,19 @@ class ThemeController extends Controller
         return view('theme.contact');
     }
    public function blog()
-{
-    $blogs = Blog::paginate(2);
-
-    if (auth()->check()) {
-        return view('theme.blog', compact('blogs'));
-
-    } else {
-        return view('Auth.login');
-    }
-}
-
-    public function blog_details()
     {
-        if (auth()->check()) {
+        $blogs = Blog::paginate(2);
+        return view('theme.blog', compact('blogs'));
+    }
 
-            return view(view: 'theme.blog_details');
+    public function blogsByCategory($id)
+    {
+        $blogs = Blog::where('category_id', $id)->paginate(2);
+        return view('theme.blog', compact('blogs'));
+    }
 
-        }
-        else {
-            return view('Auth.login');
-        }
+    public function blog_details($id)
+    {
+        return view(view: 'theme.blog_details');
     }
 }
