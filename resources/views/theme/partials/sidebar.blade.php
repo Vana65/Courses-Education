@@ -12,9 +12,11 @@
                                     <ul class="list cat-list">
                                         @foreach ($sidebaercategory as $category)
                                             <li>
-                                                <a href="#" class="d-flex">
+                                                <a href="{{ route('theme.blogsByCategory', $category->id) }}"
+                                                    class="d-flex">
                                                     <p>{{ $category->name }}</p>
-                                                    <p>(37)</p>
+                                                    <p>({{ $category->blogs->count() }})</p>
+
                                                 </a>
                                             </li>
                                         @endforeach
@@ -25,7 +27,7 @@
                             <aside class="single_sidebar_widget popular_post_widget">
                                 <h3 class="widget_title" style="color: #2d2d2d;">Recent Post</h3>
                                 <div class="media post_item">
-                                    <img src="assets/img/post/post_1.png" alt="post">
+                                    <img src="{{ asset('assets') }}/img/post/post_1.png" alt="post">
                                     <div class="media-body">
                                         <a href="blog_details.html">
                                             <h3 style="color: #2d2d2d;">From life was you fish...</h3>
@@ -34,7 +36,7 @@
                                     </div>
                                 </div>
                                 <div class="media post_item">
-                                    <img src="assets/img/post/post_2.png" alt="post">
+                                    <img src="{{ asset('assets') }}/img/post/post_2.png" alt="post">
                                     <div class="media-body">
                                         <a href="blog_details.html">
                                             <h3 style="color: #2d2d2d;">The Amazing Hubble</h3>
@@ -43,7 +45,7 @@
                                     </div>
                                 </div>
                                 <div class="media post_item">
-                                    <img src="assets/img/post/post_3.png" alt="post">
+                                    <img src="{{ asset('assets') }}/img/post/post_3.png" alt="post">
                                     <div class="media-body">
                                         <a href="blog_details.html">
                                             <h3 style="color: #2d2d2d;">Astronomy Or Astrology</h3>
@@ -52,7 +54,7 @@
                                     </div>
                                 </div>
                                 <div class="media post_item">
-                                    <img src="assets/img/post/post_4.png" alt="post">
+                                    <img src="{{ asset('assets') }}/img/post/post_4.png" alt="post">
                                     <div class="media-body">
                                         <a href="blog_details.html">
                                             <h3 style="color: #2d2d2d;">Asteroids telescope</h3>

@@ -23,13 +23,8 @@ class BlogController extends Controller
      */
     public function create()
     {
-        if (auth()->check()) {
-             $categories = Category::get();
+        $categories = Category::get();
         return view('theme.blogs.create', compact('categories'));
-        }
-        else {
-            return view('Auth.login');
-        }
 
     }
 
