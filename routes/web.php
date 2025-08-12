@@ -30,10 +30,9 @@ Route::controller(ThemeController::class)->name('theme.')->group(function () {
     });
 });
 
-Route::get('/my-blogs',[BlogController::class,'myBlogs'])->name('blogs.my-blogs')->middleware('auth');
 
 Route::middleware('auth')->resource('blogs', BlogController::class);
-
+Route::get('/my_blogs', [BlogController::class, 'myBlogs'])->middleware('auth')->name('blogs.my-blogs');
 
 
 Route::post('/subscriber/store', [SubscriberController::class, 'store'])->name('subscriber.store');

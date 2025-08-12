@@ -33,13 +33,8 @@ class ThemeController extends Controller
 
     public function blogsByCategory($id)
     {
-        if (Auth::check()) {
-            $blogs = Blog::where('category_id', $id)->paginate(2);
-            return view('theme.blog', compact('blogs'));
-        }
-       else{
-           abort(403);
-       }
+        $blogs = Blog::where('category_id', $id)->paginate(2);
+        return view('theme.blog', compact('blogs'));
     }
 
     public function blog_details($id)
