@@ -12,16 +12,18 @@
                         @if (count($blogs) > 0)
                             @foreach ($blogs as $blog)
                                 <article class="blog_item">
-                                    <div class="blog_item_img">
-                                        <img class="card-img rounded-0" src="{{ asset('storage/blogs/' . $blog->image) }}"
-                                            alt="">
-                                        <a href="#" class="blog_item_date">
-                                            <h3>{{ $blog->created_at->format('d') }}</h3>
-                                            <p>{{ $blog->created_at->format('M') }}</p>
-                                        </a>
-                                    </div>
+                                    <a href="{{ route('theme.blog_details', $blog->id) }}') }}">
+                                        <div class="blog_item_img">
+                                            <img class="card-img rounded-0" src="{{ asset('storage/blogs/' . $blog->image) }}"
+                                                alt="">
+                                            <a href="#" class="blog_item_date">
+                                                <h3>{{ $blog->created_at->format('d') }}</h3>
+                                                <p>{{ $blog->created_at->format('M') }}</p>
+                                            </a>
+                                        </div>
+                                    </a>
                                     <div class="blog_details">
-                                        <a class="d-inline-block" href="blog_details.html">
+                                        <a class="d-inline-block" href="{{ route('theme.blog_details', $blog->id) }}">
                                             <h2 class="blog-head" style="color: #2d2d2d;">{{ $blog->title }}</h2>
                                         </a>
                                         <p>{{ $blog->description }}</p>

@@ -1,6 +1,10 @@
                     @php
                         use App\Models\Category;
+                        use App\Models\Blog;
+
                         $sidebaercategory = Category::get();
+                        $recentpost = Blog::latest()->take(3)->get();
+
                     @endphp
 
                     <!--sidebar start-->
@@ -24,45 +28,23 @@
                             </ul>
                             </aside>
                             <!------ Popular Post start ----->
-                            <aside class="single_sidebar_widget popular_post_widget">
-                                <h3 class="widget_title" style="color: #2d2d2d;">Recent Post</h3>
-                                <div class="media post_item">
-                                    <img src="{{ asset('assets') }}/img/post/post_1.png" alt="post">
-                                    <div class="media-body">
-                                        <a href="blog_details.html">
-                                            <h3 style="color: #2d2d2d;">From life was you fish...</h3>
-                                        </a>
-                                        <p>January 12, 2019</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="{{ asset('assets') }}/img/post/post_2.png" alt="post">
-                                    <div class="media-body">
-                                        <a href="blog_details.html">
-                                            <h3 style="color: #2d2d2d;">The Amazing Hubble</h3>
-                                        </a>
-                                        <p>02 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="{{ asset('assets') }}/img/post/post_3.png" alt="post">
-                                    <div class="media-body">
-                                        <a href="blog_details.html">
-                                            <h3 style="color: #2d2d2d;">Astronomy Or Astrology</h3>
-                                        </a>
-                                        <p>03 Hours ago</p>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="{{ asset('assets') }}/img/post/post_4.png" alt="post">
-                                    <div class="media-body">
-                                        <a href="blog_details.html">
-                                            <h3 style="color: #2d2d2d;">Asteroids telescope</h3>
-                                        </a>
-                                        <p>01 Hours ago</p>
-                                    </div>
-                                </div>
-                            </aside>
+                            @if ($recentpost->count() > 0)
+                                <aside class="single_sidebar_widget popular_post_widget">
+                                    <h3 class="widget_title" style="color: #2d2d2d;">Recent Blogs</h3>
+                                    @foreach ($recentpost as $blog)
+                                        <div class="media post_item">
+                                            <img src="{{ asset("storage/blogs/$blog->image") }}" width="90px"
+                                                alt="post">
+                                            <div class="media-body">
+                                                <a href="blog_details.html">
+                                                    <h3 style="color: #2d2d2d;">{{ $blog->title }}</h3>
+                                                </a>
+                                                <p>{{ $blog->created_at->format('d M Y') }}</p>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </aside>
+                            @endif
                             <!------ Popular Post end ----->
                             <!------ Newsletter start ----->
                             <aside class="single_sidebar_widget newsletter_widget">
@@ -86,6 +68,7 @@
                                         type="submit">Subscribe</button>
                                 </form>
                             </aside>
+
                             <!--end newsletter-->
                         </div>
                     </div>

@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ThemeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CommentController;
 
 
 /*
@@ -39,6 +39,7 @@ Route::post('/subscriber/store', [SubscriberController::class, 'store'])->name('
 Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
 
 
+Route::post('/comments/store', [CommentController::class, 'store'])->name('comments.store');
 
 Route::get('/dashboard', function () {
     return to_route('theme.index');

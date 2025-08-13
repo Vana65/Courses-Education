@@ -28,10 +28,6 @@
                                                                     <ul class="submenu">
                                                                         <li><a href="{{ route('theme.blog') }}">Blog</a>
                                                                         </li>
-                                                                        <li><a
-                                                                                href="{{ route('theme.blog_details', 1) }}">Blog
-                                                                                Details</a>
-                                                                        </li>
                                                                         <li><a href="{{ route('blogs.create') }}">Add
                                                                                 New Bloge</a></li>
                                                                         <li><a href="#">Add New Course</a></li>

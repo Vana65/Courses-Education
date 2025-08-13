@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
-use Illuminate\Support\Facades\Auth;
 
 
 class ThemeController extends Controller
@@ -25,7 +24,7 @@ class ThemeController extends Controller
     {
         return view('theme.contact');
     }
-   public function blog()
+    public function blog()
     {
         $blogs = Blog::paginate(2);
         return view('theme.blog', compact('blogs'));
@@ -39,6 +38,9 @@ class ThemeController extends Controller
 
     public function blog_details($id)
     {
-        return view(view: 'theme.blog_details');
+
+        $blog = Blog::with('comments')->findOrFail($id);//404
+
+        return view("theme.blog_details", compact('blog'));
     }
 }
