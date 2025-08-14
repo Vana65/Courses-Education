@@ -43,4 +43,5 @@ class ThemeController extends Controller
 
         return view("theme.blog_details", compact('blog'));
     }
+
 }

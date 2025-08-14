@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\ThemeController;
+use App\Models\Courses;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\ContactController;
@@ -27,9 +29,10 @@ Route::controller(ThemeController::class)->name('theme.')->group(function () {
         Route::get('/blog', 'blog')->name('blog');
         Route::get('/blog/{id}', 'blogsByCategory')->name('blogsByCategory');
         Route::get('/blog_details/{id}', 'blog_details')->name('blog_details');
+
     });
 });
-
+Route::resource('addcourse', CoursesController::class);
 
 Route::middleware('auth')->resource('blogs', BlogController::class);
 Route::get('/my_blogs', [BlogController::class, 'myBlogs'])->middleware('auth')->name('blogs.my-blogs');

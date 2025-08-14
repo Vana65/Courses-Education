@@ -30,7 +30,8 @@
                                                                         </li>
                                                                         <li><a href="{{ route('blogs.create') }}">Add
                                                                                 New Bloge</a></li>
-                                                                        <li><a href="#">Add New Course</a></li>
+                                                                        <li><a href="{{ route('addcourse.create') }}">Add
+                                                                                New Course</a></li>
                                                                     </ul>
                                                                 </li>
                                                             @endif
